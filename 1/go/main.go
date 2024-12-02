@@ -46,6 +46,9 @@ func splitAndSortData(b []byte) ([]int, []int) {
 		right = append(right, rightInt)
 	}
 
+	sort.Ints(left)
+	sort.Ints(right)
+
 	return left, right
 }
 
@@ -53,9 +56,6 @@ func calculateDistance(left, right []int) int {
 	if len(left) != len(right) {
 		panic(fmt.Errorf("left and right is unequal in length"))
 	}
-
-	sort.Ints(left)
-	sort.Ints(right)
 
 	total := 0
 
